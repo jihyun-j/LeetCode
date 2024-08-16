@@ -3,15 +3,15 @@
  * @return {Function}
  */
 function memoize(fn) {
-   let cachedValue = {}
+   let cached = new Map() 
     
     return function(...args) {
         let key = String(args)
-        if(key in cachedValue) {
-            return cachedValue[key]
+        if(cached.has(key)){
+            return cached.get(key)
         } else {
             let result = fn(...args)
-            cachedValue[key] = result
+            cached.set(key, result)
             return result
         }
     }
