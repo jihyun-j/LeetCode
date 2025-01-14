@@ -3,15 +3,18 @@
  * @return {string}
  */
 var finalString = function(s) {
-    let newStr = ""
+    let newStr = []
+    s.split('')
+
     for(let i=0; i < s.length; i++) {
-        if(s[i] === 'i') {
-           newStr = newStr.split('').reverse().join('')
+        if(s[i] === 'i'){
+            newStr.reverse()
         } else {
-            newStr += s[i]
+            newStr.push(s[i])
         }
+        
     }
 
-    return newStr
+    return newStr.join('')
     
 };
