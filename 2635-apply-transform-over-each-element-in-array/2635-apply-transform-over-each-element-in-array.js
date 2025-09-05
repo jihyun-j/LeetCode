@@ -4,9 +4,12 @@
  * @return {number[]}
  */
 var map = function(arr, fn) {
-  const returnedArray = arr.map((num, index) => {
-    return fn(num, index)
-  })
+    let result = []
 
-  return returnedArray
+    for(let i=0; i<arr.length; i++){
+        const calc = fn(arr[i], i)
+        result.push(calc)
+    }
+
+    return result
 };
